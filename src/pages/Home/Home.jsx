@@ -13,7 +13,7 @@ export default function Home() {
 
     let stars = [],
       FPS = 60,
-      numStars = 100,
+      numStars = 150,
       mouse = { x: 0, y: 0 };
 
     // Create stars
@@ -38,7 +38,7 @@ export default function Home() {
       ctx.globalCompositeOperation = "lighter";
 
       for (let s of stars) {
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "#87CEEB";
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
         ctx.fill();
@@ -57,8 +57,8 @@ export default function Home() {
           if (distance(starI, starII) < 150) ctx.lineTo(starII.x, starII.y);
         }
       }
-      ctx.lineWidth = 0.05;
-      ctx.strokeStyle = "white";
+      ctx.lineWidth = 0.1;
+      ctx.strokeStyle = "#4169E1";
       ctx.stroke();
     }
 
@@ -95,5 +95,16 @@ export default function Home() {
     };
   }, []);
 
-  return <canvas ref={canvasRef}></canvas>;
+  return (
+    <div className="home-container">
+      {/* Background Animation */}
+      <canvas ref={canvasRef} className="canvas-bg" />
+
+      {/* Transparent div overlay */}
+      <div className="overlay">
+        <p className="first">Hello I am <span>Sairaj</span></p>
+        <p className="second">I am a <span>Full Stack Developer</span></p>
+      </div>
+    </div>
+  );
 }
