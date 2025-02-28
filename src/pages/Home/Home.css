@@ -1,7 +1,8 @@
 .large-header {
 	position: relative;
 	width: 100%;
-	background: black;
+	background: rgb(43, 43, 43);
+		/* background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg'); */
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
@@ -40,10 +41,7 @@
 
   p,span{
     font-size: 45px;
-  }
-
-
-  
+  }  
 }
 
 p {
