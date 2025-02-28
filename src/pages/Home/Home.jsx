@@ -1,23 +1,12 @@
 import { useEffect, useRef, 
-  // useState 
 } from "react";
 import "./Home.css";
 
 export default function Home() {
   const canvasRef = useRef(null);
-  // const [cursorPosition, setCursorPosition] = useState({ x: window.innerHeight/2, y: window.innerWidth/2 });
-  // console.log(cursorPosition); 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-
-    // const handleMouseMove = (event) => {
-
-    //   setCursorPosition({ x: event.clientX, y: event.clientY });
-
-    // };
-
-    // document.addEventListener('mousemove', handleMouseMove);
 
 
     canvas.width = window.innerWidth;
@@ -25,7 +14,7 @@ export default function Home() {
 
     let stars = [],
       FPS = 60,
-      numStars = 130,
+      numStars = 150,
       mouse = { x: 0, y: 0 };
 
     // Create stars
@@ -120,17 +109,7 @@ export default function Home() {
         </ul>
       </div>
 
-      {/* <div 
-        className="overlay1"
-        style={{ 
-          left: cursorPosition.x, 
-          backgroundColor:'white',
-          top: cursorPosition.y,
-          position: 'absolute' 
-        }}
-
-      > 
-      </div> */}
+      
     </div>
   );
 }

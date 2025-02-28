@@ -1,100 +1,48 @@
-body{
-    padding: 0px; 
-    margin: 0px;
-    background-color: black;
+.large-header {
+	position: relative;
+	width: 100%;
+	background: black;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 2;
 }
 
-h1,ul{
-    color: white;
+.main-title {
+	margin: 10px 0;
+	color: #f9f1e9;
+	text-align: center;
+	font-size: 60px;
 }
 
-#canvas{
-    width: 100vw; 
-    height: 100vh;
-    position: fixed;
+.text-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
-.home-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.demo-1 .main-title {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 }
 
-.canvas-bg {
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  /* display: none; */
+.main-title .thin {
+	font-weight: 200;
+	color: blue;
 }
 
-
-/* .canvas-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-} */
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background: rgba(183, 174, 174, 0);
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-  z-index: 2;
+@media only screen and (max-width: 768px) {
+	.demo-1 .main-title {
+		font-size: 3em;
+	}
 }
 
-.overlay1 {
-  position: absolute;
-  height: 200px; /* Control the reveal size */
-  width: 200px;
-  transform: translate(-50%, -50%);
-  background: none; /* Make sure the div itself is not visible */
-  border-radius: 50%; /* Make the reveal circular */
-  mix-blend-mode: destination-out; /* This will cut out the overlay from the background */
-  z-index: 3;
-  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
+p {
+	font-size: 75px;
 }
 
-
-
-p,ul{
-    font-size: 74px;
+span {
+	color: blue;
 }
-
-span{
-    color: #9C58EA;
-}
-
-
-#circle{
-    padding: 2em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top: -502em;
-    margin-left: -502em;
-    background: transparent;  /* Show through the circle */
-    -moz-border-radius: 504em;
-    border-radius: 504em;
-    border: 500em solid rgba(0,0,0,.6); /* Make a huge border to hide the rest */
-    opacity: 0;
-    -webkit-transition: opacity .5s ease;
-    -moz-transition: opacity .5s ease;
-    transition: opacity .5s ease;
-}
-
-#circle:hover{
-    opacity: 1;
-}
-
