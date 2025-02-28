@@ -37,10 +37,17 @@
 	.demo-1 .main-title {
 		font-size: 3em;
 	}
+
+  p,span{
+    font-size: 45px;
+  }
+
+
+  
 }
 
 p {
-	font-size: 75px;
+	font-size: 50px;
 }
 
 span {

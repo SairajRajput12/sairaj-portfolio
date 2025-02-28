@@ -39,10 +39,24 @@ export default function Home1() {
         }
 
         function addListeners() {
-            if (!('ontouchstart' in window)) window.addEventListener('mousemove', mouseMove);
+            if (!('ontouchstart' in window)){ 
+                window.addEventListener('mousemove', mouseMove);
+            }
+            else{
+                window.addEventListener('touchmove', touchMove);
+            }
+
             window.addEventListener('scroll', scrollCheck);
             window.addEventListener('resize', resize);
         }
+
+        function touchMove(e) {
+            if (e.touches.length > 0) {
+                target.x = e.touches[0].clientX;
+                target.y = e.touches[0].clientY;
+            }
+        }
+
 
         function mouseMove(e) {
             target.x = e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
