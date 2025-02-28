@@ -1,0 +1,251 @@
+import { 
+  useEffect
+  , useRef
+  // ,useState 
+  } from "react";
+import "./Home.css";
+
+export default function Home() {
+  const canvasRef = useRef(null);
+  // const [cursorPosition, setCursorPosition] = useState({ x: window.innerHeight/2, y: window.innerWidth/2 });
+  // console.log(cursorPosition); 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    var circle = document.getElementById('circle');
+    
+    function positionCircle(e){
+        circle.style.left = e.clientX + 'px';
+        circle.style.top = e.clientY + 'px';
+    }
+    
+    document.addEventListener('mousemove', positionCircle);
+
+
+
+    // const handleMouseMove = (event) => {
+
+    //   setCursorPosition({ x: event.clientX, y: event.clientY });
+
+    // };
+
+    // document.addEventListener('mousemove', handleMouseMove);
+
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let stars = [],
+      FPS = 60,
+      numStars = 180,
+      mouse = { x: 0, y: 0 };
+
+    // Create stars
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1 + 1,
+        vx: Math.floor(Math.random() * 50) - 25,
+        vy: Math.floor(Math.random() * 50) - 25,
+      });
+    }
+
+    // Distance function
+    function distance(point1, point2) {
+      return Math.sqrt((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2);
+    }
+
+    // Draw function
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "lighter";
+
+      for (let s of stars) {
+        ctx.fillStyle = "#87CEEB";
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+      }
+
+      ctx.beginPath();
+      for (let i = 0; i < stars.length; i++) {
+        let starI = stars[i];
+        ctx.moveTo(starI.x, starI.y);
+        if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+
+        for (let j = 0; j < stars.length; j++) {
+          let starII = stars[j];
+         if (distance(starI, starII) < 150) ctx.lineTo(starII.x, starII.y);
+        }
+       }
+      ctx.lineWidth = 0.3;
+      ctx.strokeStyle = "#4169E1";
+      ctx.stroke();
+    }
+
+    // Update function
+    function update() {
+      for (let s of stars) {
+        s.x += s.vx / FPS;
+        s.y += s.vy / FPS;
+
+        if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+        if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+      }
+    }
+
+    // Animation loop
+    function tick() {
+      draw();
+      update();
+      requestAnimationFrame(tick);
+    }
+
+    // Mouse move event
+    canvas.addEventListener("mousemove", (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    // Start animation
+    tick();
+
+    // Cleanup function
+    return () => {
+      canvas.removeEventListener("mousemove", () => {});
+    };
+  }, []);
+
+  return (
+    <div className="home-container">
+      {/* Background Animation */}
+      <canvas ref={canvasRef} className="canvas-bg" />
+
+      {/* Transparent div overlay */}
+      <div className="overlay">
+        <p className="first">Hello I am <span>Sairaj</span></p>
+        <p className="second">I am a <span>Full Stack Developer</span></p>
+      </div>
+      <div id="circle"></div>
+
+
+      {/* <div 
+        className="overlay1"
+        style={{ 
+          left: cursorPosition.x, 
+          backgroundColor:'white',
+          top: cursorPosition.y,
+          position: 'absolute' 
+        }}
+
+      > 
+      </div> */}
+    </div>
+  );
+}
+
+
+// css code
+body{
+    padding: 0px; 
+    margin: 0px;
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+#canvas{
+    width: 100vw; 
+    height: 100vh;
+    position: fixed;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas-bg {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* display: none; */
+}
+
+
+/* .canvas-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+} */
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(183, 174, 174, 0);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.overlay1 {
+  position: absolute;
+  height: 200px; /* Control the reveal size */
+  width: 200px;
+  transform: translate(-50%, -50%);
+  background: none; /* Make sure the div itself is not visible */
+  border-radius: 50%; /* Make the reveal circular */
+  mix-blend-mode: destination-out; /* This will cut out the overlay from the background */
+  z-index: 3;
+  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
+}
+
+
+
+p{
+    font-size: 74px;
+}
+
+span{
+    color: #9C58EA;
+}
+
+
+#circle{
+    padding: 2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: -502em;
+    margin-left: -502em;
+    background: transparent;  /* Show through the circle */
+    -moz-border-radius: 504em;
+    border-radius: 504em;
+    border: 500em solid rgba(0,0,0,.6); /* Make a huge border to hide the rest */
+    opacity: 0;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+
+#circle:hover{
+    opacity: 1;
+}
