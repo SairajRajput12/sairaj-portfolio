@@ -4,7 +4,7 @@ body{
     background-color: black;
 }
 
-h1{
+h1,ul{
     color: white;
 }
 
@@ -68,7 +68,7 @@ h1{
 
 
 
-p{
+p,ul{
     font-size: 74px;
 }
 

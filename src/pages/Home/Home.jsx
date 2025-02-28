@@ -115,7 +115,9 @@ export default function Home() {
       {/* Transparent div overlay */}
       <div className="overlay">
         <p className="first">Hello I am <span>Sairaj</span></p>
-        <p className="second">I am a <span>Full Stack Developer</span></p>
+        <ul className="second">
+          Hi! I am  <span>Full Stack developer</span>
+        </ul>
       </div>
 
       {/* <div 
