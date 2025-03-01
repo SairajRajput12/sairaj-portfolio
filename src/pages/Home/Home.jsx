@@ -105,11 +105,11 @@ export default function Home() {
       <div className="overlay">
         <p className="first">Hello I am <span>Sairaj</span></p>
         <ul className="second">
-          Hi! I am  <span>Full Stack developer</span>
+          Hi! I am  <span>Tech Enthusiast</span>
         </ul>
       </div>
 
-      
+     
     </div>
   );
 }

@@ -142,7 +142,7 @@ export default function Home1() {
             <canvas id="demo-canvas"></canvas>
             <div className="text-container">
                 <p className="main-title">I am <span className="thin">Sairaj</span></p>
-                <p className="main-title">I am <span className="thin">Full Stack Developer</span></p>
+                <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
             </div>
         </div>
     );
