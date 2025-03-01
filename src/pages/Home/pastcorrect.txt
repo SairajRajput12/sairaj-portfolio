@@ -1,12 +1,24 @@
+// jsx
 import { useEffect, useRef, 
+  // useState 
 } from "react";
 import "./Home.css";
 
 export default function Home() {
   const canvasRef = useRef(null);
+  // const [cursorPosition, setCursorPosition] = useState({ x: window.innerHeight/2, y: window.innerWidth/2 });
+  // console.log(cursorPosition); 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+
+    // const handleMouseMove = (event) => {
+
+    //   setCursorPosition({ x: event.clientX, y: event.clientY });
+
+    // };
+
+    // document.addEventListener('mousemove', handleMouseMove);
 
 
     canvas.width = window.innerWidth;
@@ -14,7 +26,7 @@ export default function Home() {
 
     let stars = [],
       FPS = 60,
-      numStars = 150,
+      numStars = 180,
       mouse = { x: 0, y: 0 };
 
     // Create stars
@@ -58,7 +70,7 @@ export default function Home() {
          if (distance(starI, starII) < 150) ctx.lineTo(starII.x, starII.y);
         }
        }
-      ctx.lineWidth = 0.4;
+      ctx.lineWidth = 0.3;
       ctx.strokeStyle = "#4169E1";
       ctx.stroke();
     }
@@ -104,13 +116,90 @@ export default function Home() {
       {/* Transparent div overlay */}
       <div className="overlay">
         <p className="first">Hello I am <span>Sairaj</span></p>
-        <ul className="second">
-          Hi! I am  <span>Tech Enthusiast</span>
-        </ul>
+        <p className="second">I am a <span>Full Stack Developer</span></p>
       </div>
 
-     
+      {/* <div 
+        className="overlay1"
+        style={{ 
+          left: cursorPosition.x, 
+          backgroundColor:'white',
+          top: cursorPosition.y,
+          position: 'absolute' 
+        }}
+
+      > 
+      </div> */}
     </div>
   );
 }
 
+
+// css 
+
+/* body{
+    padding: 0px; 
+    margin: 0px;
+    background-color: black;
+}
+
+h1,ul{
+    color: white;
+}
+
+#canvas{
+    width: 100vw; 
+    height: 100vh;
+    position: fixed;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas-bg {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* display: none; */
+}
+
+
+/* .canvas-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+} */
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(183, 174, 174, 0);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  z-index: 2;
+}
+
+
+
+
+p,ul{
+    font-size: 74px;
+}
+
+span{
+    color: blue;
+} */

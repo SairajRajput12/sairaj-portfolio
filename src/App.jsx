@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter,Routes,Route } from "react-router-dom";
-import Home from './pages/Home/Home.jsx'; 
+import Home1 from './pages/Home/Home1.jsx'; 
 import About from './pages/About/AboutMe.jsx'; 
 import Contact from './pages/Contact/ContactMe.jsx';
 import Achievement from './pages/Achievement/Achievement.jsx';
@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Home />}></Route>
+            <Route path='/' element={<Home1 />}></Route>
             <Route path='/about' element={<About />}></Route>
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/achievement' element={<Achievement />}></Route>
