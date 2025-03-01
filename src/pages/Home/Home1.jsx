@@ -107,7 +107,7 @@ export default function Home1() {
 
         function drawLines(p) {
             if (!p.active) return;
-            ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
+            ctx.strokeStyle = `rgba(235, 211, 248,${p.active})`;
             ctx.beginPath();
             p.closest.forEach(c => {
                 ctx.moveTo(p.x, p.y);
@@ -122,7 +122,7 @@ export default function Home1() {
             this.color = color;
             this.draw = function () {
                 if (!this.active) return;
-                ctx.fillStyle = `rgba(156,217,249,${this.active})`;
+                ctx.fillStyle = `rgba(235, 211, 248,${this.active})`;
                 ctx.beginPath();
                 ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI);
                 ctx.fill();

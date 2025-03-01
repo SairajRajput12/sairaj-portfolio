@@ -9,7 +9,7 @@ html {
 } */
 
 section {
-  height: 95vh; /* Each section takes full viewport height */
+  height: 100vh; /* Each section takes full viewport height */
   padding: 0px;
   margin: 0px;
 }

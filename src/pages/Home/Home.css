@@ -2,6 +2,8 @@
     position: relative;
     width: 100vw;
     background: black;
+    background: #17041f;
+    /* background: #2E073F; */
     overflow: hidden;
     background-size: cover;
     background-position: center center;
@@ -25,7 +27,8 @@
 
 .main-title .thin {
     font-weight: 200;
-    color: #00FFFF;
+    /* color: #00FFFF; */
+    color: #AD49E1;
 }
 
 /* Responsive Styling */
