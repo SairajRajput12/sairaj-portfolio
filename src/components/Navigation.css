@@ -42,13 +42,31 @@
         flex-wrap: wrap;
         justify-content: row;
         gap: 5px;
+        width: 100%;
     }
 
     .navcontent a {
-        font-size: 14px;
+        font-size: 20px;
         padding: 8px;
     }
 }
+
+
+
+@media only screen and (max-width: 1366px) {
+    .navcontent {
+        flex-wrap: wrap;
+        justify-content: row;
+        gap: 5px;
+        width: 100vw;
+    }
+
+    .navcontent a {
+        font-size: 30px;
+        padding: 18px;
+    }
+}
+
 
 @media only screen and (max-width: 480px) {
     .navbar-content {
@@ -62,12 +80,35 @@
         position: static;
         flex-direction: row;
         align-items: center;
-        gap: 3px;
+        gap: 1px;
         transform: none;
     }
 
     .navcontent a {
-        font-size: 10px;
-        padding: 5px;
+        font-size: 12px;
+        padding: 1px;
+        margin: 1px;
+    }
+}
+@media only screen and (max-width: 376px) {
+    .navbar-content {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navcontent {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 1px;
+        transform: none;
+    }
+
+    .navcontent a {
+        font-size: 9px;
+        padding: 1px;
+        margin: 2px;
     }
 }
