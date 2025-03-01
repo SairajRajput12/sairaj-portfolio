@@ -1,5 +1,10 @@
-.c{
+.about{
   width: 100vw;
   height: 100vh;
+  background-color: #2E073F;
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 

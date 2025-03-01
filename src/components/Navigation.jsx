@@ -3,8 +3,7 @@ import './Navigation.css';
 export default function Navigation(){
     return(
         <div className='navbar-content'>
-            <h2>Portfolio</h2>
-            <nav className="sidebar">
+            <nav className="navcontent">
                 <a href="#home">Home</a>
                 <a href="#about">About Me</a>
                 <a href="#experience">Experience</a>
