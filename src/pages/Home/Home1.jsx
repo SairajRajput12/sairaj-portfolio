@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './Home.css';
 import { gsap } from 'gsap';
+import Navigation from '../../components/Navigation.jsx'
 
 export default function Home1() {
     useEffect(() => {
@@ -138,12 +139,17 @@ export default function Home1() {
     }, []);
 
     return (
-        <div id="large-header" className="large-header">
-            <canvas id="demo-canvas"></canvas>
-            <div className="text-container">
-                <p className="main-title">I am <span className="thin">Sairaj</span></p>
-                <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
-            </div>
-        </div>
+        <>
+            <section id='home'>
+                <div id="large-header" className="large-header">
+                <Navigation /> 
+                    <canvas id="demo-canvas"></canvas>
+                    <div className="text-container">
+                        <p className="main-title">I am <span className="thin">Sairaj</span></p>
+                        <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }

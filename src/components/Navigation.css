@@ -1,0 +1,34 @@
+.sidebar {
+  position: absolute; 
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent; 
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row; 
+  gap: 15px;
+  gap: 20px;
+  z-index: 10;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #EBD3F8;
+  /* padding: 10px 15px; */
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+
+.navbar-content{
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,7 +1,9 @@
 import './AboutMe.css'; 
 
 export default function About(){
-    return(
-        <h1>This is the About component</h1>
-    )
+  return (
+    <section className='c'>
+      <h1>Hello this is about me page</h1>
+    </section>
+  );
 }

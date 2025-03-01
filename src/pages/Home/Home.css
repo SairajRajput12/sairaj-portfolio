@@ -1,6 +1,6 @@
 .large-header {
     position: relative;
-    width: 100%;
+    width: 100vw;
     background: black;
     overflow: hidden;
     background-size: cover;
