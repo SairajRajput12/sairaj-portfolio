@@ -50,3 +50,34 @@ h1{
   gap: 25px; 
   /* background-color: aquamarine; */
 }
+
+
+@media only screen and (max-width: 480px) {
+   .about-me{
+      width: 100%;
+      gap: 5px;
+    }
+
+    .profile-image{
+      height: 50px; 
+      width: 50px;
+      border-radius: 60px;
+    }
+    
+    h1{
+      color: #EBD3F8;
+      font-size: 20px;
+    }
+
+    .desc{
+      font-size: 12px;
+      color: #EBD3F8;
+      text-align: start;
+    }
+
+    .description{
+      width: 70%;
+      gap: 25px; 
+      /* background-color: aquamarine; */
+    }
+}
