@@ -27,14 +27,21 @@
     flex-direction: row;
     align-self: center;
     border: 2px solid transparent;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Apply animation only when .animate class is added */
+/* Re-trigger animation every time it enters the viewport */
 .block.animate {
     animation: draw-border 0.8s linear forwards;
     opacity: 1;
+}
+
+/* Reset styles when out of view */
+.block:not(.animate) .left,
+.block:not(.animate) .margin-block,
+.block:not(.animate) .content-block {
+    opacity: 0;
 }
 
 .left {
@@ -47,7 +54,7 @@
 }
 
 .block.animate .left {
-    animation: fade-in 0.8s ease-out 0.8s forwards;
+    animation: fade-in 0.8s ease-out forwards;
 }
 
 .margin-block {
@@ -59,7 +66,7 @@
 }
 
 .block.animate .margin-block {
-    animation: fade-in 0.8s ease-out 1.5s forwards;
+    animation: fade-in 0.8s ease-out 0.5s forwards;
 }
 
 .content-block {
@@ -74,5 +81,80 @@
 }
 
 .block.animate .content-block {
-    animation: fade-in 1s ease-out 2s forwards;
+    animation: fade-in 1s ease-out 1s forwards;
+}
+
+@media (max-width: 1024px) {
+    .block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left {
+        width: 100%;
+        border-bottom: 2px solid #EBD3F8;
+    }
+
+    .right {
+        width: 100%;
+        flex-direction: column;
+        border-left: none;
+    }
+
+    .margin-block {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-block {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience h1 {
+        font-size: 28px;
+    }
+
+    .content-block h1 {
+        font-size: 24px;
+    }
+
+    .content-block p,
+    .content-block span {
+        font-size: 16px;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience h1 {
+        font-size: 24px;
+    }
+
+    .block {
+        width: 95vw;
+    }
+
+    .content-block {
+        padding: 10px;
+    }
+
+    .content-block h1 {
+        font-size: 20px;
+    }
+
+    .content-block p,
+    .content-block span {
+        font-size: 14px;
+    }
+
+    .skills button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }

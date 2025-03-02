@@ -8,11 +8,15 @@ export default function ExperienceRightCard({ val }) {
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                if (entries[0].isIntersecting) {
-                    setIsVisible(true);
-                }
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                    } else {
+                        setIsVisible(false); // Reset animation when it goes out of view
+                    }
+                });
             },
-            { threshold: 0.3 } 
+            { threshold: 0.3 }
         );
 
         if (ref.current) {

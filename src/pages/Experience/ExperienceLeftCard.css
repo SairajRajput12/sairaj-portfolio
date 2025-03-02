@@ -1,18 +1,7 @@
-@keyframes draw-border {
-    0% {
-        border-width: 0;
-        opacity: 0;
-    }
-    100% {
-        border-width: 2px;
-        opacity: 1;
-    }
-}
-
 @keyframes fade-in {
     0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
@@ -27,13 +16,11 @@
     flex-direction: row;
     align-self: center;
     border: 2px solid transparent;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Apply animation only when .animate class is added */
 .block.animate {
-    animation: draw-border 0.8s linear forwards;
     opacity: 1;
 }
 
@@ -42,12 +29,12 @@
     width: 100%;
     display: flex; 
     flex-direction: row;
-    opacity: 0;
     border-right: 2px solid #EBD3F8;
+    opacity: 0;
 }
 
 .block.animate .left {
-    animation: fade-in 0.8s ease-out 0.8s forwards;
+    animation: fade-in 0.8s ease-out forwards;
 }
 
 .margin-block {
@@ -59,7 +46,7 @@
 }
 
 .block.animate .margin-block {
-    animation: fade-in 0.8s ease-out 1.5s forwards;
+    animation: fade-in 0.8s ease-out 0.5s forwards;
 }
 
 .content-block {
@@ -74,5 +61,5 @@
 }
 
 .block.animate .content-block {
-    animation: fade-in 1s ease-out 2s forwards;
+    animation: fade-in 1s ease-out 1s forwards;
 }
