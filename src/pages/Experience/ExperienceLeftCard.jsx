@@ -1,38 +1,70 @@
-export default function ExperienceLeftCard(){
-    return(
-            <div className='block'>
-                    <div className='left'>
-                        <div className='content-block'>
-                            <div>
-                                <h1>Brandspark Technologies</h1>
-                                <p>
-                                    <span>Software Developer Intern Position</span>
-                                    <span>Januvary 2025 - Now</span>
-                                </p>
-                                <div className='key-responsibilities'>
-                                    <h3>Key Responsibilities</h3>
-                                    <li>
-                                        Interned as a Software developer, working on UI/UX improvements and feature development.
-                                    </li>
-                                    <li>
-                                        Contributed to the company main project, collaborating with cross-functional teams.
-                                    </li>
-                                    <li>
-                                        Worked with Angular, Git, Networking, Spring Boot, Docker, and TypeScript.
-                                    </li>
-                                    <li>
-                                        Gained hands-on experience with backend development responsibilities.
-                                    </li>
-                                </div>
-                            </div>
+import { useEffect, useRef, useState } from 'react';
+import './ExperienceLeftCard.css';
+
+export default function ExperienceLeftCard({ val }) {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.3 } 
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
+
+    return (
+        <div ref={ref} className={`block ${isVisible ? 'animate' : ''}`}>
+            <div className='left'>
+                <div className='content-block'>
+                    <div>
+                        <h1>{val.name || "No name provided"}</h1>
+                        <p>
+                            <span>{val.position || "No position"}</span>
+                            <span>{val.duration || "No duration"}</span>
+                        </p>
+                        <div className="skills">
+                            {val.skills?.length ? (
+                                val.skills.map((value, index) => (
+                                    <button key={index}>{value}</button>
+                                ))
+                            ) : (
+                                <p>No skills listed</p>
+                            )}
                         </div>
-                        <div className='margin-block'>
-                            <div className='f'>2025 Januvary</div>
-                            <div className='s'></div>
+                        <div className='key-responsibilities'>
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                {val.keyResponsibilities?.length ? (
+                                    val.keyResponsibilities.map((value, index) => (
+                                        <li key={index}>{value}</li>
+                                    ))
+                                ) : (
+                                    <p>No responsibilities listed</p>
+                                )}
+                            </ul>
                         </div>
                     </div>
-                    <div className='right'>               
-                    </div>
+                </div>
+                <div className='margin-block'>
+                    <div className='f'>{val.time || "No time provided"}</div>
+                    <div className='s'></div>
+                </div>
             </div>
-    )
+            <div className='right'></div>
+        </div>
+    );
 }

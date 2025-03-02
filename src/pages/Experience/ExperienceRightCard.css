@@ -1,58 +1,68 @@
+@keyframes draw-border {
+    0% {
+        border-width: 0;
+        opacity: 0;
+    }
+    100% {
+        border-width: 2px;
+        opacity: 1;
+    }
+}
 
-.block{
-    /* background-color: aqua; */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.block {
     width: 90vw; 
     height: 34vh;
-    margin: 0px;
     display: flex; 
     flex-direction: row;
     align-self: center;
+    border: 2px solid transparent;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
 }
 
-.right{
-    /* background-color: beige; */
-    height: 100%; 
-    width: 100%;
-    border-left: 2px solid #EBD3F8;
+/* Apply animation only when .animate class is added */
+.block.animate {
+    animation: draw-border 0.8s linear forwards;
+    opacity: 1;
 }
 
-.left{
-    /* background-color: bisque; */
+.left {
     height: 100%; 
     width: 100%;
     display: flex; 
     flex-direction: row;
+    opacity: 0;
+    border-right: 2px solid #EBD3F8;
 }
 
-.margin-block{
+.block.animate .left {
+    animation: fade-in 0.8s ease-out 0.8s forwards;
+}
+
+.margin-block {
     width: 20%;
     height: 100%;
-    /* background-color: azure; */
     display: flex; 
     flex-direction: column;
+    opacity: 0;
 }
 
-
-.f{
-    height: 100%; 
-    width: 100%;
-    /* background-color: aqua; */
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-end;
-    text-align: center;
-    color: #EBD3F8;
-    border-bottom: 2px solid #EBD3F8;
+.block.animate .margin-block {
+    animation: fade-in 0.8s ease-out 1.5s forwards;
 }
 
-
-.s{
-    height: 100%;
-    width: 100%;
-    /* background-color: blue;  */
-}
-
-.content-block{
+.content-block {
     width: 100%;
     height: 100%;
     margin: 10px;
@@ -60,53 +70,9 @@
     border-radius: 15px;
     justify-content: center;
     align-self: center;
+    opacity: 0;
 }
 
-
-.content-block h1{
-    text-align: start;
-    margin-left: 15px;
-    font-size: 32px;
-    margin-bottom: 0px;
-    color: #BDBDBD;
+.block.animate .content-block {
+    animation: fade-in 1s ease-out 2s forwards;
 }
-
-
-.content-block p{
-    text-align: start;
-    margin-left: 15px;
-    font-size: 20px;
-    color: #BDBDBD;
-    display: flex; 
-    justify-content: space-between;
-}
-
-.content-block span{
-    font-size: 20px; 
-    margin: 0px;
-    padding: 0px;
-    /* margin-left: 15px; */
-    color: #BDBDBD;
-    margin-right: 10px;
-}
-
-.key-responsibilities h3{
-    color: white;
-    text-align: start;
-    margin-left: 15px;
-}
-
-.key-responsibilities li{
-    color: white;
-    text-align: start;
-    margin-left: 15px;
-}
-
-.content-block div{
-    justify-content: center;
-    align-self: center;
-}
-
-
-
-

@@ -112,13 +112,13 @@
 }
 
 .key-responsibilities h3{
-    color: white;
+    color: #EBD3F8;;
     text-align: start;
     margin-left: 15px;
 }
 
 .key-responsibilities li{
-    color: white;
+    color: #EBD3F8;;
     text-align: start;
     margin-left: 15px;
 }
@@ -128,3 +128,18 @@
     align-self: center;
 }
 
+.skills{
+    display: flex; 
+    flex-direction: row; 
+    gap: 12px;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+
+.skills button{
+    background-color: #2E073F;
+    color: #EBD3F8;
+    padding: 10px;
+    border-radius: 12px; 
+}
