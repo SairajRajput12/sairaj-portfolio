@@ -1,6 +1,6 @@
-import './ExperienceCard.css'; 
+import './ExperienceRightCard.css'; 
 
-export default function ExperienceCard(){
+export default function ExperienceRightCard(){
     return(
          <div className='block'>
                 <div className='left'></div>
@@ -34,6 +34,6 @@ export default function ExperienceCard(){
                         </div>
                     </div>
                 </div>
-            </div>
+         </div>
     )
 }
