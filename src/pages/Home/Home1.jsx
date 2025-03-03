@@ -140,7 +140,6 @@ export default function Home1() {
 
     return (
         <>
-            <section id='home'>
                 <div id="large-header" className="large-header">
                 <Navigation /> 
                     <canvas id="demo-canvas"></canvas>
@@ -149,7 +148,6 @@ export default function Home1() {
                         <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
                     </div>
                 </div>
-            </section>
         </>
     );
 }

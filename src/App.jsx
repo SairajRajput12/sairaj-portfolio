@@ -4,9 +4,11 @@ import Home1 from './pages/Home/Home1.jsx';
 import About from './pages/About/AboutMe.jsx'; 
 import Contact from './pages/Contact/ContactMe.jsx';
 import Achievement from './pages/Achievement/Achievement.jsx';
-import Experience from './pages/Experience/Experience.jsx';
+// import Experience from './pages/Experience/Experience.jsx';
 import Project from './pages/Project/Project.jsx';
 import Skills from './pages/Skill/Skills.jsx';
+import ExperienceTimeline from './pages/Experience/TimeLine.jsx';
+// import ExperienceTimeline from './pages/Experience/TimeLine.jsx';
 // import Navigation from './components/Navigation.jsx';
 
 function App() {
@@ -15,9 +17,9 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <div className="content">
-          <Home1 />
+          <section id="home"><Home1 /></section>
           <section id="about"><About /></section>
-          <section id="experience"><Experience /></section>
+          <section id="experience"><ExperienceTimeline /></section>
           <section id="skills"><Skills /></section>
           <section id="project"><Project /></section> 
           <section id="achievement"><Achievement /></section>
