@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-
 import "./Timeline.css";
+import TimeLineElement from './TimeLineElement';
+import { useEffect, useRef, useState } from 'react';
 
 const experienceSection = [
   {
@@ -32,56 +32,44 @@ const experienceSection = [
 ];
 
 const ExperienceTimeline = () => {
-
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-           (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                    } else {
-                        setIsVisible(false); // Reset animation when it goes out of view
-                    }
-                });
-            },
-            { threshold: 0.3 }
-        );
+        const observer = new IntersectionObserver(
+            (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setIsVisible(true);
+                        } else {
+                            setIsVisible(false); // Reset animation when it goes out of view
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
             if (ref.current) {
-                observer.unobserve(ref.current);
+                observer.observe(ref.current);
             }
-        };
-  },[])
+
+            return () => {
+                if (ref.current) {
+                    observer.unobserve(ref.current);
+                }
+            };
+    },[])
+
+
 
 
 
   return (
-    <div ref={ref} className="timeline-container">
+    <div className="timeline-container">
       <h2 className="timeline-title">Experience</h2>
-      <div className={`timeline ${isVisible ? 'animate' : ''}`}>
+      <div ref={ref} className={`timeline ${isVisible ? 'animate' : ''}`}>
         {experienceSection.map((exp, index) => (
-          <div key={index} className={`timeline-item ${isVisible ? 'fade-in' : ''}`}>
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <h3>{exp.position}</h3>
-              <h4>{exp.name}</h4>
-              <p>{exp.duration}</p>
-              <ul>
-                {exp.keyResponsibilities.map((task, i) => (
-                  <li key={i}>{task}</li>
-                ))}
-              </ul>
-              <p><strong>Skills:</strong> {exp.skills.join(", ")}</p>
-            </div>
-          </div>
+            <TimeLineElement isVisible={isVisible}  key={index} value={exp} />
         ))}
       </div>
     </div>
