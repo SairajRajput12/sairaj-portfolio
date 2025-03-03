@@ -3,7 +3,7 @@ import './Skills.css';
 export default function Skills(){
     return(
         <section className='skill'>
-             <h1>This is the Skills component</h1>
+             <h1>Skills</h1>
         </section>
     )
 }

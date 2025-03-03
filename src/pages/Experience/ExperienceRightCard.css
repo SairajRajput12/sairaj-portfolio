@@ -22,7 +22,7 @@
 
 .block {
     width: 90vw; 
-    height: 34vh;
+    height: 36vh;
     display: flex; 
     flex-direction: row;
     align-self: center;
@@ -84,64 +84,65 @@
     animation: fade-in 1s ease-out 1s forwards;
 }
 
-@media (max-width: 1024px) {
-    .block {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+
+.skills {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 10px; /* Adds spacing between buttons */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.skills button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2E073F;
+    color: #EBD3F8;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.key-responsibilities{
+    /* padding-bottom: 22px; */
+    margin-bottom: 22px;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+
+    .f div{
+        font-size: 14px;
     }
 
+    .experience h1 {
+        font-size: 24px;
+    }
+
+    .block {
+        width: 100vw;
+    }
+    
     .left {
-        width: 100%;
-        border-bottom: 2px solid #EBD3F8;
+        width: 50%;
+        /* border-bottom: 2px solid #EBD3F8; */
     }
 
     .right {
         width: 100%;
-        flex-direction: column;
+        flex-direction: row;
         border-left: none;
-    }
-
-    .margin-block {
-        width: 100%;
-        text-align: center;
-    }
-
-    .content-block {
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .experience h1 {
-        font-size: 28px;
-    }
-
-    .content-block h1 {
-        font-size: 24px;
-    }
-
-    .content-block p,
-    .content-block span {
-        font-size: 16px;
-    }
-
-    .skills {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .experience h1 {
-        font-size: 24px;
-    }
-
-    .block {
-        width: 95vw;
     }
 
     .content-block {
         padding: 10px;
+        height: auto;
+    }
+
+    .content-block div{
+        width: 250px;
     }
 
     .content-block h1 {
@@ -150,7 +151,11 @@
 
     .content-block p,
     .content-block span {
-        font-size: 14px;
+        font-size: 11px;
+    }
+
+    .skills{
+        width: auto;
     }
 
     .skills button {
@@ -158,3 +163,5 @@
         font-size: 12px;
     }
 }
+
+

@@ -7,7 +7,7 @@ export default function ExperienceRightCard({ val }) {
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            (entries) => {
+           (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setIsVisible(true);

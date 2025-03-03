@@ -11,7 +11,7 @@ export default function ExperienceLeftCard({ val }) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setIsVisible(true);
-                    } else {
+                   } else {
                         setIsVisible(false); // Reset animation when it goes out of view
                     }
                 });

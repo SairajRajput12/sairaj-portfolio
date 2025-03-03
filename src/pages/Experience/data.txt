@@ -1,0 +1,27 @@
+
+:root {
+
+    --background-color: #112e42;
+
+    --main-color:       #00abf0;
+
+    --htm-color:        #f06529;
+
+    --javascript-color: #fdd634;
+
+    --reactjs-color:    #00d8ff;
+
+    --nodejs-color:     #6caa48;
+
+    --expressjs-color:  #01041d;
+
+    --mongodb-color:    #599636;
+
+    --php-color:        #484c89;
+
+}
+
+Work Experience : 
+     Interned as a Software developer, working on UI/UX improvements and feature development.Contributed to the company’s main project, collaborating with cross-functional teams.Worked with Angular, Git, Networking, Spring Boot, Docker, and TypeScript.Gained hands-on experience with backend development responsibilities.
+
+

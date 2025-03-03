@@ -43,11 +43,12 @@ export default function Experience(){
     return(
         <section className='experience'>
             <h1>Experience</h1>
+            <br />
             {
                 experienceSection.map((value,index) => {
                     if(prev === 'left'){
                         prev = 'right'; 
-                       return (<ExperienceRightCard key={index} val={value} />);
+                        return (<ExperienceRightCard key={index} val={value} />);
                     }
                     else{
                         prev = 'left'; 
