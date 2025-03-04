@@ -1,4 +1,33 @@
 .project{
     width: 100vw; 
     height: 100vh;
+    background-color: #2E073F;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.categoryselector{
+    border: 2px solid #EBD3F8;
+    padding: 3px;
+    border-radius: 15px;
+}
+
+.categoryselector button{
+    font-size: 20px; 
+    background-color: #2E073F;
+    border: none;
+    height: 100%;
+    margin: 0px;
+    border-right: 2px solid #EBD3F8;
+    padding: 10px;
+    /* background-color: #7A1CAC; */
+    /* padding: 0px;  */
+    /* margin: 0px; */
+}
+
+
+.f1{
+    border-right: 0px solid #EBD3F8;
 }
