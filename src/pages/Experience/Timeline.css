@@ -25,7 +25,7 @@
 
 .timeline-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: #EBD3F8;
   margin-bottom: 20px;
@@ -107,19 +107,19 @@
 }
 
 .timeline-content h3 {
-  font-size: 18px;
+  font-size: 24px;
   margin: 0;
   color: #BDBDBD;
 }
 
 .timeline-content h4 {
-  font-size: 16px;
+  font-size: 20px;
   color: #BDBDBD;
   margin: 5px 0;
 }
 
 .timeline-content p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 5px 0;
   color: #EBD3F8;
 }
@@ -127,7 +127,7 @@
 .timeline-content ul {
   list-style-type: disc;
   margin-left: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: #EBD3F8;
 }
 
@@ -165,4 +165,9 @@
   .timeline-content h4 {
     font-size: 14px;
   }
+
+  .timeline-title{
+    font-size: 20px;
+  }
+
 }
