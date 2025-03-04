@@ -13,7 +13,7 @@
 }
 
 .experience h1{
-    font-size: 32px;
+    font-size: clamp(24px, 5vw, 32px);
 }
 
 
