@@ -43,6 +43,11 @@ section {
     align-content: center; 
 }
 
+
+#contact{
+  height: auto; 
+}
+
 .experience h1{
     font-size: 32px;
 }

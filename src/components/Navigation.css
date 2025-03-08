@@ -41,12 +41,12 @@
     .navcontent {
         flex-wrap: wrap;
         justify-content: row;
-        gap: 5px;
+        gap: 15px;
         width: 100%;
     }
 
     .navcontent a {
-        font-size: 20px;
+        font-size: 25px;
         padding: 8px;
     }
 }
@@ -57,7 +57,7 @@
     .navcontent {
         flex-wrap: wrap;
         justify-content: row;
-        gap: 5px;
+        gap: 10px;
         width: 100vw;
     }
 
@@ -80,7 +80,7 @@
         position: static;
         flex-direction: row;
         align-items: center;
-        gap: 1px;
+        gap: 6px;
         transform: none;
     }
 
@@ -102,7 +102,7 @@
         position: static;
         flex-direction: row;
         align-items: center;
-        gap: 1px;
+        gap: 4px;
         transform: none;
     }
 
