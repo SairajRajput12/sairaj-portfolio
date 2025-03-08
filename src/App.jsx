@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home1 from './pages/Home/Home1.jsx'; 
 import About from './pages/About/AboutMe.jsx'; 
 import Contact from './pages/Contact/ContactMe.jsx';
@@ -14,7 +14,7 @@ import ExperienceTimeline from './pages/Experience/TimeLine.jsx';
 function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-container">
         <div className="content">
           <section id="home"><Home1 /></section>
@@ -26,7 +26,7 @@ function App() {
          <section id="contact"><Contact /></section>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

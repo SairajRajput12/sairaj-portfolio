@@ -7,7 +7,7 @@ export default function About(){
       <section className='about'>
       <div className='about-me'>
        <h1>About Me</h1>
-        <img className='profile-image' src='makima.jpeg' alt='makima image'  />
+        <img className='profile-image' src='sairaj.jpeg' alt='makima image'  />
           <div className='description'>
           <p className='desc'>I am Sairaj, a B.Tech student with a strong passion for software development. My expertise spans web technologies and programming languages, including Flask, Python, React.js, MySQL, C++, Java, and C. </p>
           <p className='desc'>I am constantly exploring new technologies and pushing my limits to enhance my skills.I am a passionate and dedicated web developer, committed to leveraging my skills and knowledge to create impactful digital solutions. I am continuously evolving in the ever-changing tech landscape.</p>
