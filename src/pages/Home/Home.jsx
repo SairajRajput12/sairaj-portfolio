@@ -101,12 +101,12 @@ export default function Home() {
       <div className="home-container">
       {/* Background Animation */}
         <canvas ref={canvasRef} className="canvas-bg" />
-
+ 
         {/* Transparent div overlay */}
         <div className="overlay">
-          <p className="first">Hello I am <span>Sairaj</span></p>
+          <p className="first">Hello I am Sairaj</p>
           <ul className="second">
-            Hi! I am  <span>Tech Enthusiast</span>
+            Hi! I am  Full Stack Developer
           </ul>
         </div>
 
