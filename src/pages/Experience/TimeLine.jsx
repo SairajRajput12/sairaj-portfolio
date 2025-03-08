@@ -63,7 +63,7 @@ const ExperienceTimeline = () => {
 
 
 
-
+ 
   return (
     <div className="timeline-container">
       <h2 className="timeline-title">Experience</h2>

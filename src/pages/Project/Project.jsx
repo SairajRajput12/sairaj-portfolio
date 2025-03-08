@@ -11,6 +11,7 @@ import img7 from './images/restaurant app/img1.png';
 import img8 from './images/searchFlix/image4.png'; 
 import img9 from './images/smart survillience system/image1.jpg'; 
 import img10 from './images/X_API/image1.jpeg'; 
+import img11 from './images/plant disease prediction/image.jpeg'; 
 import ProjectCard from '../../components/ProjectCard';
 import { useState } from 'react';
 
@@ -160,11 +161,22 @@ const projects = [
         ],
         category:'other'
     },
-    
+    {
+        value: 'Plant Disease Prediction', 
+        img:img11, 
+        link:'https://github.com/SairajRajput12/Plant_disease_prediction', 
+        duration:'July 2024 to Octomber 2024', 
+        skills:[
+            'Tensorflow',
+            'Python',
+            'Keras',
+        ],
+        category:'ml'
+    }
 ]
 
 export default function Project(){
-    const fi_project = projects.filter((value,index) => value.category === 'web'); 
+    const fi_project = projects.filter((value) => value.category === 'web'); 
 
 
     const [visibleProjects,setVisibleProject] = useState(fi_project); 

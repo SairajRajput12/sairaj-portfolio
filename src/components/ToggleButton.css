@@ -1,4 +1,49 @@
+.ToggleButtonGroup {
+    display: flex;
+    border: 1.5px solid #EBD3F8;
+    color: #EBD3F8;
+    font-size: 20px;
+    border-radius: 13px;
+    font-weight: 500;
+    margin: 22px 0px;
+    overflow: hidden; /* Prevents border cut-off */
+    box-sizing: border-box; /* Includes border in the width calculation */
+    min-width: fit-content; /* Ensures it doesn’t shrink too much */
+}
 
+.ToggleButton {
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #2E073F;
+    text-align: center;
+    flex-grow: 1; 
+    min-width: 80px; 
+}
+
+.Divider {
+    width: 1.5px;
+    background: #EBD3F8;
+}
+
+@media (max-width: 768px) {
+    .ToggleButtonGroup {
+        font-size: 12px;
+        width: 100%; 
+        max-width: 90%; 
+        margin: 16px auto;
+    }
+
+    .ToggleButton {
+        padding: 6px 12px;
+        border-radius: 6px;
+        min-width: 70px;
+    }
+}
+
+
+
+/* 
 .ToggleButtonGroup{
     display: flex; 
     border: 1.5px solid #EBD3F8;
@@ -33,4 +78,4 @@
         padding: 6px 8px;
         border-radius: 4px;
     }
-}
+} */
