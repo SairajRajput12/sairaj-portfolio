@@ -1,0 +1,37 @@
+/* Ensure the container is responsive */
+.project-selector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* Adjust heading visibility and styling */
+.project-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block; /* Ensure it's visible */
+}
+
+/* Style for the selector dropdown */
+.project-selector {
+    width: 90%;
+    max-width: 400px;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+/* Ensure proper visibility on small screens */
+@media (max-width: 768px) {
+    .project-heading {
+        font-size: 1.2rem;
+    }
+
+    .project-selector {
+        width: 100%;
+    }
+}

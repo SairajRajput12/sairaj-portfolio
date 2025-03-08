@@ -1,0 +1,36 @@
+
+.ToggleButtonGroup{
+    display: flex; 
+    border: 1.5px solid #EBD3F8;
+    color : #EBD3F8; 
+    font-size: 20px;
+    border-radius: 13px;
+    font-weight: 500;
+    margin: 22px 0px;
+}
+
+
+
+
+.ToggleButton{
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #2E073F;
+}
+
+.Divider{
+    width: 1.5px;
+    background: #EBD3F8; 
+}
+
+@media (max-width: 768px) {
+    .ToggleButtonGroup{
+        font-size: 12px;
+    }
+
+    .ToggleButton{
+        padding: 6px 8px;
+        border-radius: 4px;
+    }
+}
