@@ -16,7 +16,8 @@ html {
 }
 
 section {
-  height: 100vh; 
+  min-height: 100vh; 
+  height: auto;
   width: 100vw;
   overflow-x: hidden ;
   display: flex;
@@ -29,7 +30,8 @@ section {
 
 #experience{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; 
+    height: auto;
     margin: 0px; 
     padding: 0px;
     gap: 50px;

@@ -90,7 +90,7 @@ export default function Skills(){
         <section className='skill'>
              <h1>Skills</h1>
              <div className='skill-section'>
-                    {
+                   {
                         skills.map((value,index) => (
                             <SkillIcon key={index} val={value}  />
                         ))
