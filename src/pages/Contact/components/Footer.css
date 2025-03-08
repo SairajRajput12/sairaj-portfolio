@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1200px;
+    text-align: center;
     margin: auto;
     gap: 30px;
 }
