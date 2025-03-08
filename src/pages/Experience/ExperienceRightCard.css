@@ -1,0 +1,167 @@
+@keyframes draw-border {
+    0% {
+        border-width: 0;
+        opacity: 0;
+    }
+    100% {
+        border-width: 2px;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.block {
+    width: 90vw; 
+    height: 36vh;
+    display: flex; 
+    flex-direction: row;
+    align-self: center;
+    border: 2px solid transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Re-trigger animation every time it enters the viewport */
+.block.animate {
+    animation: draw-border 0.8s linear forwards;
+    opacity: 1;
+}
+
+/* Reset styles when out of view */
+.block:not(.animate) .left,
+.block:not(.animate) .margin-block,
+.block:not(.animate) .content-block {
+    opacity: 0;
+}
+
+.left {
+    height: 100%; 
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    opacity: 0;
+    border-right: 2px solid #EBD3F8;
+}
+
+.block.animate .left {
+    animation: fade-in 0.8s ease-out forwards;
+}
+
+.margin-block {
+    width: 20%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    opacity: 0;
+}
+
+.block.animate .margin-block {
+    animation: fade-in 0.8s ease-out 0.5s forwards;
+}
+
+.content-block {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    background-color: #7A1CAC;
+    border-radius: 15px;
+    justify-content: center;
+    align-self: center;
+    opacity: 0;
+}
+
+.block.animate .content-block {
+    animation: fade-in 1s ease-out 1s forwards;
+}
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 10px; /* Adds spacing between buttons */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.skills button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2E073F;
+    color: #EBD3F8;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.key-responsibilities{
+    /* padding-bottom: 22px; */
+    margin-bottom: 22px;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+
+    .f div{
+        font-size: 14px;
+    }
+
+    .experience h1 {
+        font-size: 24px;
+    }
+
+    .block {
+        width: 100vw;
+    }
+    
+    .left {
+        width: 50%;
+        /* border-bottom: 2px solid #EBD3F8; */
+    }
+
+    .right {
+        width: 100%;
+        flex-direction: row;
+        border-left: none;
+    }
+
+    .content-block {
+        padding: 10px;
+        height: auto;
+    }
+
+    .content-block div{
+        width: 250px;
+    }
+
+    .content-block h1 {
+        font-size: 20px;
+    }
+
+    .content-block p,
+    .content-block span {
+        font-size: 11px;
+    }
+
+    .skills{
+        width: auto;
+    }
+
+    .skills button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+

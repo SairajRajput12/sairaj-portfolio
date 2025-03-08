@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './Home.css';
 import { gsap } from 'gsap';
+import Navigation from '../../components/Navigation.jsx'
 
 export default function Home1() {
     useEffect(() => {
@@ -106,7 +107,7 @@ export default function Home1() {
 
         function drawLines(p) {
             if (!p.active) return;
-            ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
+            ctx.strokeStyle = `rgba(235, 211, 248,${p.active})`;
             ctx.beginPath();
             p.closest.forEach(c => {
                 ctx.moveTo(p.x, p.y);
@@ -121,7 +122,7 @@ export default function Home1() {
             this.color = color;
             this.draw = function () {
                 if (!this.active) return;
-                ctx.fillStyle = `rgba(156,217,249,${this.active})`;
+                ctx.fillStyle = `rgba(235, 211, 248,${this.active})`;
                 ctx.beginPath();
                 ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI);
                 ctx.fill();
@@ -138,12 +139,15 @@ export default function Home1() {
     }, []);
 
     return (
-        <div id="large-header" className="large-header">
-            <canvas id="demo-canvas"></canvas>
-            <div className="text-container">
-                <p className="main-title">I am <span className="thin">Sairaj</span></p>
-                <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
-            </div>
-        </div>
+        <>
+                <div id="large-header" className="large-header">
+                <Navigation /> 
+                    <canvas id="demo-canvas"></canvas>
+                    <div className="text-container">
+                        <p className="main-title">I am Sairaj</p>
+                        <p className="main-title">I am Tech Enthusiast</p>
+                    </div>
+                </div>
+        </>
     );
 }

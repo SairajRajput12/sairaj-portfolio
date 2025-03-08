@@ -1,28 +1,33 @@
 import './App.css'
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Home1 from './pages/Home/Home1.jsx'; 
 import About from './pages/About/AboutMe.jsx'; 
 import Contact from './pages/Contact/ContactMe.jsx';
-import Achievement from './pages/Achievement/Achievement.jsx';
-import Experience from './pages/Experience/Experience.jsx';
+// import Achievement from './pages/Achievement/Achievement.jsx';
+// import Experience from './pages/Experience/Experience.jsx';
 import Project from './pages/Project/Project.jsx';
 import Skills from './pages/Skill/Skills.jsx';
+import ExperienceTimeline from './pages/Experience/TimeLine.jsx';
+// import ExperienceTimeline from './pages/Experience/TimeLine.jsx';
+// import Navigation from './components/Navigation.jsx';
 
 function App() {
 
   return (
     <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<Home1 />}></Route>
-            <Route path='/about' element={<About />}></Route>
-            <Route path='/contact' element={<Contact />}></Route>
-            <Route path='/achievement' element={<Achievement />}></Route>
-            <Route path='/experience' element={<Experience />}></Route>
-            <Route path='/project' element={<Project />}></Route> 
-            <Route path='/skills' element={<Skills />}></Route>
-        </Routes>
+      <div className="app-container">
+        <div className="content">
+          <section id="home"><Home1 /></section>
+          <section id="about"><About /></section>
+          <section id="experience"><ExperienceTimeline /></section>
+          <section id="skills"><Skills /></section>
+          <section id="project"><Project /></section> 
+          {/* <section id="achievement"><Achievement /></section> */}
+         <section id="contact"><Contact /></section>
+        </div>
+      </div>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;

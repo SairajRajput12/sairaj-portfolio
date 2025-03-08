@@ -1,0 +1,12 @@
+.achievement{
+    height: 100vh; 
+    width: 100vw;
+    background-color: #2E073F;
+}
+
+.achievement h1{
+    color: #EBD3F8;
+    font-size: clamp(24px, 5vw, 32px);
+}
+
+
