@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Home1 from './pages/Home/Home1.jsx'; 
 import About from './pages/About/AboutMe.jsx'; 
 import Contact from './pages/Contact/ContactMe.jsx';
-import Achievement from './pages/Achievement/Achievement.jsx';
+// import Achievement from './pages/Achievement/Achievement.jsx';
 // import Experience from './pages/Experience/Experience.jsx';
 import Project from './pages/Project/Project.jsx';
 import Skills from './pages/Skill/Skills.jsx';
@@ -22,8 +22,8 @@ function App() {
           <section id="experience"><ExperienceTimeline /></section>
           <section id="skills"><Skills /></section>
           <section id="project"><Project /></section> 
-          <section id="achievement"><Achievement /></section>
-          <section id="contact"><Contact /></section>
+          {/* <section id="achievement"><Achievement /></section> */}
+         <section id="contact"><Contact /></section>
         </div>
       </div>
     </BrowserRouter>

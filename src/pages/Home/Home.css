@@ -20,7 +20,7 @@
 
 .main-title {
     margin: 10px 0;
-    color: #f9f1e9;
+    color: #9C58EA;
     text-align: center;
     font-size: clamp(28px, 6vw, 60px); /* Dynamic scaling */
     font-weight: bold;
@@ -29,7 +29,7 @@
 
 .main-title .thin {
     font-weight: 200;
-    color: #AD49E1;
+    color: #9C58EA;
 }
 
 /* Responsive Tweaks */

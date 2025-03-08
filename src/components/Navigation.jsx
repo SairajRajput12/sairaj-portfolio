@@ -9,7 +9,7 @@ export default function Navigation(){
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#project">Projects</a>
-                <a href="#achievement">Achievements</a>
+                {/* <a href="#achievement">Achievements</a> */}
                 <a href="#contact">Get in touch</a>
             </nav>
         </div>

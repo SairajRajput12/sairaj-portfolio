@@ -144,8 +144,8 @@ export default function Home1() {
                 <Navigation /> 
                     <canvas id="demo-canvas"></canvas>
                     <div className="text-container">
-                        <p className="main-title">I am <span className="thin">Sairaj</span></p>
-                        <p className="main-title">I am <span className="thin">Tech Enthusiast</span></p>
+                        <p className="main-title">I am Sairaj</p>
+                        <p className="main-title">I am Tech Enthusiast</p>
                     </div>
                 </div>
         </>
