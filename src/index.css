@@ -4,8 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #2E073F;
-
+  color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +31,7 @@ h1 {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #2E073F;
+    color: white;
     background-color: #ffffff;
   }
   a:hover {
