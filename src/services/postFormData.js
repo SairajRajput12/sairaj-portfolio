@@ -1,20 +1,18 @@
-const API_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+const VITE_ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
 
-export default async function postData(Data) {
-    try {
-        const response = await fetch(API_URL, {
+export default async function postData(formData) {
+        console.log(formData); 
+        formData.append("access_key", VITE_ACCESS_TOKEN);
+        const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(Data),
+            body: formData
         });
 
         const data = await response.json();
-        console.log(data);
-        return { message: "Data posted successfully!", code: 200 };
-    } catch (error) {
-        console.error("Error posting data:", error);
-        return { message: "Error occurred!", code: error.code || 500 };
-    }
+
+        if (data.success) {
+            return {"message":"Data submitted succesfully !!","code":200};
+        } else {
+            return {"message":"Faced Error while posting data in backend !!","code":404}
+        }        
 }
