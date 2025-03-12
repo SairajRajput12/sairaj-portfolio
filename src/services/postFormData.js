@@ -3,6 +3,7 @@ const VITE_ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
 export default async function postData(formData) {
         console.log(formData); 
         formData.append("access_key", VITE_ACCESS_TOKEN);
+        console.log(VITE_ACCESS_TOKEN); 
         console.log(formData); 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
